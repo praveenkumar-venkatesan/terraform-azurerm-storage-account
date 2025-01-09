@@ -172,6 +172,13 @@ variable "shared_access_key_enabled" {
   default     = false
 }
 
+variable "allowed_copy_scope" {
+  description = "The list of scopes that can perform a copy operation from this storage account. This can be set to any service or user identity, including the storage account's user delegation key, a shared access signature, or an Azure AD application. If this is not set, any service or user identity can perform a copy operation from this storage account."
+  type        = list(string)
+  # default     = []
+  
+}
+
 variable "blob_versioning_enabled" {
   description = "Controls whether blob object versioning is enabled."
   type        = bool
